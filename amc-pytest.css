@@ -1,0 +1,134 @@
+/* ############ REMOVE CLUTTER ############  */
+
+#exit_b, #help_b {display: none;}
+div.input_area {border: none;}
+div.prompt, div.prompt.input_prompt, div.prompt.output_prompt {display: None !important;}
+div.output_subarea {max-width: 100% !important;}
+
+/* ############ GLOBAL ############  */
+
+#site {
+    background: #FFFFFF;
+}
+
+.rise-enabled .text_cell.rendered .rendered_html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.reveal div.cell.selected, div.cell.selected.jupyter-soft-selected {
+    border: 1px solid transparent;
+}
+
+.reveal div.input_area {
+    padding-left: 10px !important;
+    background: transparent;
+}
+
+.container {
+    width:95% !important;
+}
+
+/* ############ CODE CELLS ############  */
+
+div.cell.code_cell {
+    font-family: "Source Code Pro Medium";
+    font-size: 180% !important;
+}
+
+div.cell.code_cell.rendered {
+    margin-top: 15px;
+    border: rgba(243, 119, 38, 0.2) solid 5px;
+    border-radius: 10px;
+}
+
+div.cell.code_cell.rendered.selected {
+    border: #008000 solid 5px;
+}
+
+div.cell.selected::before,
+div.cell.selected.jupyter-soft-selected::before {
+    background: #008000;
+    height: calc(33%);
+    top: 33%;
+    bottom: -33%;
+    border-radius: 10px;
+    left: -12px;
+    width: 20px;
+    position: absolute;
+    display: block;
+    content: '';
+    z-index: 100;
+}
+
+div.output_subarea.output_text.output_stream.output_stdout {
+    background: rgba(24, 184, 251, 0.17);
+}
+
+div.output_subarea.output_text.output_result {
+    background: rgba(0, 241, 0, 0.33);
+}
+
+div.output_stderr {
+    background: #eeeeee !important;
+}
+
+.edit_mode .selected {
+    background-color: rgba(125, 232, 71, 0.28);
+}
+
+div.cell {
+	padding: 0px;
+	margin: 0px;
+}
+
+/* ############ MARKDOWN CELLS ############  */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "National Park Heavy", sans-serif;
+    margin: 0 0 20px 0;
+    color: #333;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-shadow: none;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.reveal section img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.reveal p, div.text_cell_render.rendered_html ul li {
+    font-family: "Source Code Pro Black";
+    font-size: 100%;
+    line-height: 1.2em;
+    list-style: disc;
+
+}
+
+/* ############ PROGRESS BAR ############  */
+
+.rise-enabled .reveal .progress {
+  position: fixed;
+  display: none;
+  height: 7px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #FFFFFF;
+}
+
+.reveal .progress span {
+    display: block;
+    height: 100%;
+    width: 0;
+    /*background-color: #F37726;*/
+    -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+    transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}

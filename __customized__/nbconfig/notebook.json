@@ -1,0 +1,21 @@
+{
+  "keys": {
+    "command": {
+      "bind": {
+        "0,9": "jupyter-notebook:run-all-cells-below",
+        "ctrl-shift-minus": "jupyter-notebook:split-cell-at-cursor",
+        "ctrl-shift-e": "RISE:render-all-cells",
+        "alt-up": "jupyter-notebook:move-cell-up",
+        "alt-down": "jupyter-notebook:move-cell-down",
+        "shift-o": "RISE:toggle-fragment",
+        "0,x": "jupyter-notebook:confirm-restart-kernel-and-run-all-cells",
+        "0,c": "jupyter-notebook:confirm-restart-kernel-and-clear-output",
+        "0,n": "RISE:toggle-notes",
+        "0,y": "jupyter-notebook:clear-all-cells-output"
+      }
+    }
+  },
+  "Notebook": {
+    "Header": false
+  }
+}
