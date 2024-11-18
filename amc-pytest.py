@@ -110,13 +110,13 @@ def report(results):
         print(f"\nexecuted: {len(results)} (all is fine!)")
 
 
-def pico_pytest(path=Path.cwd(), collectOnly=False, markExpression=""):
+def pico_pytest(path=Path.cwd(), collect_only=False, mark_expression=""):
     paths = list(Path(path).glob("**/test_*.py"))
     modules = [get_module(path) for path in paths]
     tests = list(chain(*[collect_test_functions(m) for m in modules]))
-    if markExpression:
-        tests = filter_tests(tests, markExpression)
-    if collectOnly:
+    if mark_expression:
+        tests = filter_tests(tests, mark_expression)
+    if collect_only:
         display_collected(tests)
     else:
         report({test: execute_test(test) for test in tests})
@@ -127,6 +127,6 @@ if __name__ == '__main__':
     pytest.mark = MarkAttacherFactoryFactory()
     pico_pytest()
     print()
-    pico_pytest(collectOnly=True)
+    pico_pytest(collect_only=True)
     print()
-    pico_pytest(collectOnly=True, markExpression="charlie or lucy")
+    pico_pytest(collect_only=True, mark_expression="charlie or lucy")
